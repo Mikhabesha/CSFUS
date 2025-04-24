@@ -1,0 +1,173 @@
+﻿@model CSFUF.Models.ConExpTask
+
+@{
+    ViewBag.Title = "Details";
+}
+@*@{
+    Layout = "~/Views/Shared/_ContributionDistroLayout.cshtml";
+}*@
+
+<h2>ዝርዝር</h2>
+<a title="Print Data" alt="Print Data" class="btn btn-success btn-sm" onclick="window.print();" target="_blank" style="cursor:pointer;"> Print Data</a>
+
+<div>
+    <h4>መዋጮ</h4>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-heading">Customer's Information</div>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.FullName)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.FullName)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.OrgName)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.OrgName)
+                </dd>
+
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.OrgTIN)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.OrgTIN)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.DocCount)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.DocCount)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.Allowance)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.Allowance)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.PhoneNo)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.PhoneNo)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.GovIDNo)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.GovIDNo)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.PrivateIDNo)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.PrivateIDNo)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.MotherName)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.MotherName)
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.BDate)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.BDate)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.DueDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DueDate)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.DateRecieved)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.DateRecieved)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.DateTransfered)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateTransfered)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.DocStatus)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.DocStatus)
+                </dd>
+
+                <dt class="hover">
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd class="hover">
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</div>
+        <p>
+            @* @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+            @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Index")
+        </p>
+        <style>
+            .dl-horizontal {
+                width: 30%;
+                float: left;
+                padding: 8px;
+                margin-top: 15px
+            }
+
+            .panel-body {
+                background-color: #e0e6ff;
+            }
+
+            .hover {
+                background-color: #ebebeb;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+                .hover:hover {
+                    background-color: #bebbbb;
+                    border-color: #ccc;
+                }
+        </style>

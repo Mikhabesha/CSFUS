@@ -1,0 +1,422 @@
+﻿@model CSFUF.Models.Report
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>የሪፖርት መግለጫ</h2>
+<a title="Print Data" alt="Print Data" class="btn btn-primary btn-sm" onclick="window.print();" target="_blank" style="cursor:pointer;"> Print Data</a>
+
+<div>
+
+    @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Index")
+    <br />
+    <h6>Registered in @ViewBag.Region</h6>
+    <hr />
+    <div class="registration">
+        <div class="panel panel-default">
+            <div class="panel-heading">ምዝገባ ላይ ያለ የደንበኛ ሁኔታ</div>
+            <div class="panel-body">
+                <div class="active">
+
+                    <dl class="dl-horizontal">
+
+                        <dt class="hover">
+                            @Html.DisplayName("የደንበኛ ሙሉ ስም :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.FullName)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("የድርጅት ስም :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.OrgName)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("የድርጅት ቲን :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.OrgTIN)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("ስልክ ቁጥር :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.PhoneNo)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("የጡረተኛ መታወቂያ ቁጥር :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.PrivateIDNo)
+                        </dd>
+                    </dl> 
+                    <dl class="dl-horizontal">
+                        <dt class="hover">
+                            @Html.DisplayName("የእናት ስም :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.MotherName)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("የተመዘገበበት ቀን :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DateRegistered)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("ወደ መዋጮ የተላከበት ቀን :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DateTransferedToCon)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("ፆታ :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.Gender)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("የመዝጋቢው ስም :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.RegisteredExpertName)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("የምዝገባ ሁኔታ :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DocStatusOfReg)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="Wusane">
+        <div class="panelM panel-default">
+            <div class="panel-heading">መዋጮ ላይ ያለ የደንበኛ ሁኔታ</div>
+            <div class="panel-body">
+                <div class="active">
+                    @*<h4><u>መዋጮ ላይ ያለ የደንበኛ ሁኔታ</u></h4>*@
+                    <dl class="dl-horizontal">
+                        <dt class="hover">
+                            @Html.DisplayName("የመዋጮ ሁኔታ :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DocStatusOfCon)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("የተመደበው የመዋጮ ባለሞያ :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.AssignedConExpert)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("ለመዋጮ ባለሞያ የደረሰበት ቀን :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.TaskRecievedDateCon)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("ወደ ዉሳኔ ክፍል የተላከበት ቀን :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DateTransferedToDecFromCon)
+                        </dd>
+
+                    </dl>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="Wusane">
+        <div class="panelW panel-default">
+            <div class="panel-heading">ዉሳኔ ላይ ያለ የደንበኛ ሁኔታ</div>
+            <div class="panel-body">
+                <div class="active">
+                    <dl class="dl-horizontal">
+                        <dt class="hover">
+                            @Html.DisplayName("የተመደበው የዉሳኔ ባለሞያ :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.AssignedDecExpert)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("ለዉሳኔ ባለሞያ የተሰጠበት ቀን :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DateRecievedToDecExpert)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("ለዉሳኔ ባለሞያ ያስተላለፈበት ቀን :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DateTransferedOfDecExpert)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("የተወሰነለት ደሞዝ :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.Allowance)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("ደሞዝ የተወሰነለት ቀን :")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DueDate)
+                        </dd>
+
+                        <dt class="hover">
+                            @Html.DisplayName("በውሳኔ ክፍል የዶክመንቱ ሁኔታ : ")
+                        </dt>
+
+                        <dd class="hover1">
+                            @Html.DisplayFor(model => model.DocStatusOfDec)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="panel-default">
+            <div class="panel panel-default">
+                <div class="panel-heading">አፕሩቫል እና ክፍያ ላይ ያለ የደንበኛ ሁኔታ</div>
+                <div class="panel-body">
+                    <div class="active">
+                        <dl class="dl-horizontal">
+                            <dt class="hover">
+                                @Html.DisplayName("የተመደበው አፕሩቨር :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.AssignedApprover)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("የአፕሩቫል ሁኔታ :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.ApprovalStatus)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("አፕሩቭ የተደረገበት ቀን :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.ApprovedDate)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("የክፍያ ሁኔታ :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.PaymentStatus)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("ወደክፍያ የተመራበት ቀን :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.PaymentDateRecived)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("የሰራው የክፍያ ባለሞያ :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.PaymentExpert)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("የተላከበት ሪጅን :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.AssignedRegion)
+                            </dd>
+                        </dl>
+                        <dl class="dl-horizontal">
+                            <dt class="hover">
+                                @Html.DisplayName("ደብዳቤ የተዘጋጀበት ቀን :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.PayLetterPrepDayForRep)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("ባለ መብት የተረከበበት ቀን :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.PayIssueDateForRep)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("የተላከበት ቀን :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.PaymentsWhen)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("የተላለፈለት ባለሞያ :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.ReciepentPayExpForRep)
+                            </dd>
+
+                            <dt class="hover">
+                                @Html.DisplayName("ሪፈረንስ ቁጥር :")
+                            </dt>
+
+                            <dd class="hover1">
+                                @Html.DisplayFor(model => model.ReferenceNoForReport)
+                            </dd>
+                        </dl>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+        @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Index", new { @class = "btn btn-primary" })
+    </p>
+    <style>
+        .table-hover tr:hover {
+            background-color: #eee;
+            animation: highlight 0.2s ease-in-out;
+        }
+        .approval {
+            width: 80%;
+        }
+        .dl-horizontal {
+            width: 30%;
+            float: left;
+            padding: 8px;
+            margin-top: 15px;
+            margin-right: 100px;
+        }
+
+        .hover {
+            background-color: #ebebeb;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 5px
+        }
+        .hover1 {
+            background-color: #ebebeb;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            width:50%;
+        }
+        .hover1:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+        }
+
+        .hover:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+        }
+
+        .table td {
+            color: #025db2;
+        }
+
+        .table th {
+            color: #023767;
+        }
+
+        .active {
+            border: 1px solid deepskyblue;
+        }
+
+        .ttext {
+            border-radius: 5px;
+            background-color: #23297a;
+            width: 12%;
+            box-shadow: 5px 5px 10px #23297a;
+        }
+
+            .ttext:hover {
+                background-color: #bebbbb;
+                border-color: #ccc;
+            }
+
+        .panel-heading:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+        }
+        .panelM {
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #23297a;
+        }
+        .panel {
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #23297a;
+        }
+
+        .panelW {
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #23297a;
+            padding: 10px;
+        }
+        .texts {
+            color: whitesmoke;
+            margin-left: 10px;
+        }
+    </style>

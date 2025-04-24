@@ -1,0 +1,148 @@
+﻿@model CSFUF.Models.ConReg
+
+@{
+    ViewBag.Title = "SendTo";
+}
+@*@{
+    Layout = "~/Views/Shared/_ContributionDistroLayout.cshtml";
+}*@
+
+<h2>መረጃውን ለዉሳኔ ክፍሉ ይላኩ</h2>
+
+<div>
+    <h4>ወዋጮ ክፍል </h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArchiveNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArchiveNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgTIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgTIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocCount)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Allowance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allowance)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GovIDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GovIDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrivateIDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrivateIDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.DateRecieved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecieved)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTransfered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTransfered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="ይላኩ" class="btn btn-success" /> |
+            @Html.ActionLink("ወደ ማህደር ይመለሱ", "Index")
+        </div>
+    }
+</p>

@@ -1,0 +1,197 @@
+﻿@model CSFUF.Models.CustomerReg
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Edit";
+ }
+@*@{
+    Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+}*@
+
+<h2>ማስተካከያ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="panel panel-body">
+        <h4>የምዝገባ ክፍል</h4>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Editting as  ")
+                @Html.DisplayName("  " + User.Identity.GetUserName() + "!")
+            </dt>
+        </dl>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.FullName, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.FullName, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.FullName)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrgName, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.OrgName, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.OrgName)
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArchiveNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.ArchiveNo, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.ArchiveNo)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrgTIN, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.OrgTIN, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.OrgTIN)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.DocCount, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DocCount, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.DocCount)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Allowance, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Allowance, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.Allowance)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.PhoneNo, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.PhoneNo)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.GovIDNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.GovIDNo, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.GovIDNo)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrivateIDNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.PrivateIDNo, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.PrivateIDNo)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.MotherName, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.MotherName, new { @class = " form-control " })
+                @*@Html.TextBox(Model.MotherName, Model.MotherName, new { @readonly = "readonly" })*@
+                @Html.ValidationMessageFor(model => model.MotherName)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.BDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.BDate, new { @class = "datepicker form-control input-datepicker", placeholder = "DD/MM/YYYY", })
+                @Html.ValidationMessageFor(model => model.BDate)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.DueDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DueDate, new { @class = "datepicker form-control input-datepicker", placeholder = "DD/MM/YYYY", })
+                @Html.ValidationMessageFor(model => model.DueDate)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateRecieved, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DateRecieved, new { @readonly = "readonly", @class = "datepicker form-control input-datepicker", placeholder = "DD/MM/YYYY", })
+                @Html.ValidationMessageFor(model => model.DateRecieved)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateTransfered, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DateTransfered, "{0:MM\\/dd\\/yyyy}", new { @class = "datepicker form-control input-datepicker", placeholder = "DD/MM/YYYY", })
+                @Html.ValidationMessageFor(model => model.DateTransfered)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Gender, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpertName, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.ExpertName, new SelectList(ViewBag.list2), new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.ExpertName)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Department, new { @class = "control-label col-md-2" })
+            <div class="col-md-4 ">
+                @Html.TextBoxFor(model => model.Department, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.Department)
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <br />
+            @Html.LabelFor(model => model.DocStatus, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(model => model.DocStatus, "Pending", new { @name = "status" }) Pending
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(model => model.DocStatus, "Completed", new { @name = "status" }) Completed
+                </label>
+                @Html.ValidationMessageFor(model => model.DocStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+        <hr />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Report")||
+    <br />
+    @Html.ActionLink("ወደ ዋናው ገፅ ተመለስ", "Index")||
+
+
+</div>

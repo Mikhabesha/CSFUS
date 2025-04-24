@@ -1,0 +1,256 @@
+﻿@model CSFUF.Models.CustomerReg
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-1.12.4.js"></script>*@
+<h2>መመዝገቢያ</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        @Html.ActionLink("Back to List", "ReportForExp", new { @class = "btn btn-primary" })
+        <br />
+        @Html.ActionLink("Back to Main Page", "Index", new { @class = "btn btn-primary" })
+
+    </div>
+    <div class="panel panel-body">
+        <h4>የባለሙያ መረጃ</h4>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpertName, new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.DropDownListFor(model => model.ExpertName, new SelectList(ViewBag.list2), new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.ExpertName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Department, new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.DropDownListFor(model => model.Department, new SelectList(ViewBag.list1), new { @class = " form-control ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.Department)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Region, new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.DropDownListFor(model => model.Region, new List<SelectListItem> { new SelectListItem { Text = ViewBag.RegionName, Value = ViewBag.RegionName } }, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.Region)
+            </div>
+        </div>
+
+        <br />
+        <hr />
+        <h4>የደንበኛ መረጃ መሙያ</h4>
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.Label("የደንበኛ ሙሉ ስም", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.FullName, new { @class = " form-control ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.FullName)
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("የድርጅት ስም", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.OrgName, new { @class = " form-control ", @required = "required", @type = "Varchar" })
+                @Html.ValidationMessageFor(model => model.OrgName)
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("የድርጅት ቲን", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.OrgTIN, new { @class = " form-control ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.OrgTIN)
+            </div>
+        </div>
+        <hr />
+
+
+        <div class="form-group">
+            @Html.Label("የዶሴ ብዛት", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DocCount, new { @class = " form-control ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.DocCount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("የፎቶ ብዛት", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Photo, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.Photo)
+            </div>
+        </div>
+
+        <hr />
+
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("ስልክ ቁጥር", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.PhoneNo, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.PhoneNo)
+            </div>
+        </div>
+
+        <hr />
+
+
+        <div class="form-group">
+            @Html.Label("የመንግስት መለያ ቁጥር", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.GovIDNo, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.GovIDNo)
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("የጡረተኛ መ/ቁ", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.PrivateIDNo, new { @class = " form-control ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.PrivateIDNo)
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("የእናት ስም", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.MotherName, new { @class = " form-control ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.MotherName)
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("የልደት ዘመን", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+
+                @Html.TextBoxFor(model => model.BDate, new
+                {
+                    @name = "BDate",
+                  @readonly = "readonly",
+                   @id = "datepicker",
+                   @class = "form-control",
+                   @required = "required"
+           })
+                @Html.ValidationMessageFor(model => model.BDate)
+            </div>
+        </div>
+
+        <hr />
+
+        <hr />
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("ደሞዝ የተቋረጠበት ቀን", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DueDate, new { @class = " form-control ", @type = "date", @required = "required" })
+                @Html.ValidationMessageFor(model => model.DueDate)
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("ፆታ", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.Gender, new SelectList(ViewBag.list), new { @class = " form-control ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.Label("የጠየቀበት ምክንያት", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.ReasonForRequest, new { @class = "form-control", @required = "required" })
+                @Html.ValidationMessageFor(model => model.ReasonForRequest)
+            </div>
+        </div>
+
+        <hr />
+        <div class="form-group">
+            @Html.Label("ሪማርክ", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Remark, new { @class = " form-control " })
+                @Html.ValidationMessageFor(model => model.Remark)
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <br />
+            @Html.Label("የዶኩመንቱ ሁኔታ", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                <label class="radio" id="Pend">
+                    @Html.RadioButtonFor(model => model.DocStatus, "Pending", new { @name = "StatusChk" }) Pending
+                </label>
+                <label class="radio" id="Pend">
+                    @Html.RadioButtonFor(model => model.DocStatus, "Completed", new { @name = "StatusChk" }) Completed
+                </label>
+                @Html.ValidationMessageFor(model => model.DocStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+
+
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-4">
+                <input type="submit" id="btn" value="መዝግብ" class="btn btn-success" />
+            </div>
+        </div>
+
+        <hr />
+
+    </div>
+}
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+@section Scripts {
+
+<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+<script type="text/javascript">
+    $(function () {
+        var date = new Date();
+        var currentMonth = date.getMonth();
+        var currentDate = date.getDate();
+        var currentYear = date.getFullYear();
+        $("#datepicker").datepicker({
+            maxDate: new Date(currentYear, currentMonth, currentDate),
+            changeMonth: true,
+            changeYear: true
+
+        });
+    });
+</script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,211 @@
+﻿@model IEnumerable<CSFUF.Models.ConExpTask>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="ttext">
+    <h4 class="texts">  የመዋጮ ባለሞያ ገፅ </h4>
+</div>
+@* this one makes a search with only ID(PrivateIdNo) *@
+@using (Html.BeginForm("Index", "ContributionExperts", FormMethod.Get))
+{
+<div class="rectangle">
+    <h5>የጡረተኛ መ/ቁ ያስገቡ ፡</h5>
+    @Html.TextBox("searching", null, "--መ.ቁ ያስገቡ--", htmlAttributes: new { @class = "form-control" })
+    <label class="alert-danger">@ViewBag.Message</label>
+    <input type="submit" value="ይፈልጉ" class="btn btn-success btn-sm" />
+   <br/>
+        @Html.ActionLink("Refresh🔄", "Index", "ContributionExperts")
+
+</div>
+    <style>
+        .rectangle {
+            width: 25%;
+            float: left;
+           
+            padding: 18px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        .btn {
+            padding: 8px;
+            margin-top: 8px;
+        }
+    </style>
+}
+
+
+@*this one searchs with a date and a username(by username i mean user who already signed in)*@
+@using (Html.BeginForm("Index", "ContributionExperts", FormMethod.Post))
+{
+ 
+    <div class="rectangle2">
+        <span>ከ ዕለት : </span><input type="date" name="Start" class="form-control" required="required" />
+        <span>እስከ ዕለት : </span><input type="date" name="End" class="form-control" required="required" />
+
+        <input type="submit" value="መረጃውን ይፈልጉ" class="btn btn-success btn-sm" />
+        <label class="alert-danger">@ViewBag.Counting2</label>
+    </div>
+    <style>
+        .rectangle:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+
+        .rectangle2:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+        .rectangle2 {
+            width: 25%;
+            float: inline-start;
+          
+            padding: 17px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        .btn {
+            padding: 8px;
+            margin-top: 8px;
+        }
+        .ttext {
+            border-radius: 5px;
+            background-color: #23297a;
+            width: 15%;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .texts {
+            color: whitesmoke;
+        }
+
+        .table td {
+            color: #025db2;
+        }
+
+        .table th {
+            color: #023767;
+        }
+
+        .table {
+            width: 150%;
+            float: right;
+            clear: left;
+            margin-left: 15px;
+        }
+
+        /*.contain {
+            display: flex;
+            gap: 15px;*/ /* Space between columns */
+        /*}*/
+
+        .rectangle2 {
+            width: 25%;
+            float: inline-start;
+            border: 1px solid deepskyblue;
+            padding: 3px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrgName)
+            </th>
+       
+            <th>
+                @Html.DisplayNameFor(model => model.PrivateIDNo)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.MotherName)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DateRecieved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTransfered)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DocStatus)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.AssignedExpert)
+            </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivateIDNo)
+        </td>
+    
+        <td>
+            @Html.DisplayFor(modelItem => item.DateRecieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTransfered)
+        </td>
+
+        <td>
+            <span class="@(item.DocStatus == "Pending" ? "text-danger" : item.DocStatus == "Completed" ? "text-success" : "")">
+                @Html.DisplayFor(modelItem => item.DocStatus)
+            </span>
+        </td>
+
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DocStatus)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.AssignedExpert)
+        </td>*@
+        <td>
+            @Html.ActionLink("መግለጫ", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) |
+            @if (item.DocStatus != "Completed")
+            {
+                @Html.ActionLink("ማስተካከያ", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+            }
+
+            @if (item.DateTransfered == null & item.DocStatus == "Completed")
+            {
+                @Html.ActionLink("አስተላልፍ", "SendTo", new { id = item.Id }, new { @class = "btn btn-success btn-sm" })
+            }
+            @* @Html.ActionLink("አስተላልፍ", "SendTo", new { id=item.Id })*@
+        </td>
+    </tr>
+        }
+
+    </table>
+}

@@ -1,0 +1,169 @@
+﻿@model CSFUF.Models.ConExpTask
+
+@{
+    ViewBag.Title = "SendTo";
+}
+
+
+<h2>ማስተላለፊያ</h2>
+    <p>
+       @using (Html.BeginForm())
+       {
+          @Html.AntiForgeryToken()
+  
+           <div class="col-md-4 form-actions no-color">
+              <input type="submit" value="አረጋግጥ" class="btn btn-success" /> |
+          </div>
+        }
+     </p>
+  <p>
+      <h4>ወደ ዉሳኔ ክፍል መላኪያ ገፅ</h4> <br />
+@*    @Html.ActionLink("ማስተካከያ", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Index")
+</p>
+<div>
+   
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArchiveNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArchiveNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgTIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgTIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Allowance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allowance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GovIDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GovIDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrivateIDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrivateIDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecieved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecieved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTransfered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTransfered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedExpert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedExpert)
+        </dd>
+
+    </dl>
+</div>
+<p>
+@*    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Index")
+</p>

@@ -1,0 +1,57 @@
+﻿
+@{
+    if (User.IsInRole("Admin") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else if (User.IsInRole("Approver") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_ApproverLayoutPage1.cshtml";
+    }
+    else if (User.IsInRole("Contribution") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_ContributionDistroLayout.cshtml";
+    }
+    else if (User.IsInRole("Contribution Expert") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/ContributionExpLayout.cshtml";
+    }
+    else if (User.IsInRole("Payment") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_PaymentLayoutPage1.cshtml";
+    }
+    else if (User.IsInRole("Registration") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+    }
+    else if (User.IsInRole("Registration TeamLeader") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/RegistrationTeamLeaderLayout.cshtml";
+    }
+    else if (User.IsInRole("Decision") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_DecisionLayoutPage1.cshtml";
+    }
+    else if (User.IsInRole("Decision Expert") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/DecisionExpertLayout.cshtml";
+    }
+    else if (User.IsInRole("Decision Distributor") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/DecisionDistro.cshtml";
+    }
+    else if (User.IsInRole("BranchTeamLeader") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_BranchTeamLayout.cshtml";
+    }
+
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    }
+    if (User.IsInRole("") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    }
+  }
+   

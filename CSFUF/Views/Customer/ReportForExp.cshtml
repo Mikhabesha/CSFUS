@@ -1,0 +1,146 @@
+﻿@*@model IEnumerable<CSFUF.Models.CustomerReg>*@
+@model PagedList.IPagedList<CSFUF.Models.CustomerReg>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>ረፖርት</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <br />
+    @Html.ActionLink("Back to Main Page", "Index", new { @class = "btn btn-success btn-sm" })
+</p>
+@using (Html.BeginForm("ReportForExp", "Customer", FormMethod.Get))
+{
+
+    <div class="rectangle">
+        <h5 class="texts">በደንበኛ መ.ቁ ይፈልጉ</h5>
+        @Html.TextBox("SearchID", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+
+        <label class="alert-danger">@ViewBag.Message1</label>
+        <label class="alert-danger">@ViewBag.Message2</label>
+        <h5 class="texts">በስልክ ቁጥር ይፈልጉ</h5>
+        @Html.TextBox("SearchPhone", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+        <br />
+        <input type="submit" value="Submit" class="btn btn-success btn-sm" />
+        <br />
+        @Html.ActionLink("Refresh", "ReportForExp")
+        <br />
+    </div>
+
+}
+    <style>
+        .table td {
+            color: #025db2;
+        }
+
+        .table th {
+            color: #023767;
+        }
+        .rectangle:hover {
+            background-color: #002e63;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+        }
+
+        .rectangle {
+            width: 20%;
+            float: left;
+          
+            padding: 8px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: #23297a;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        .texts {
+            color: #ffffff;
+        }
+        .table {
+            
+            width: 150%;
+            float: right;
+            clear: left;
+            margin-left: 15px;
+        }
+        .contain {
+            display:flex;
+            
+            gap: 15px; /* Space between columns */
+        }
+    </style>
+
+<br/>
+<div class="contain">
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>
+                @Html.ActionLink("የደንበኛ ሙሉ ስም", "ReportForExp", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("የተመዘገበበት ቀን", "ReportForExp", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+            <th>
+                የጡረተኛ መ.ቁ
+            </th>
+           
+            <th>
+                የተላለፈበት ቀን
+            </th>
+            <th>
+                የዶክመንት ሁኔታ
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateRecieved)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrivateIDNo)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTransfered)
+                </td>
+
+                <td>
+                    <span class="@(item.DocStatus == "Pending" ? "text-danger" : item.DocStatus == "Completed" ? "text-success" : "")">
+                        @Html.DisplayFor(modelItem => item.DocStatus)
+                    </span>
+                </td>
+                <td>
+                    @if (item.DateTransfered == null)
+                    {
+                        @Html.ActionLink("አስተካክል", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+                    }
+
+                    @Html.ActionLink("ዝርዝር", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) |
+
+                    @if (item.DocStatus == "Completed" & item.DateTransfered == null)
+                    {
+                        @Html.ActionLink("አስተላልፍ", "SendTo", new { id = item.Id }, new { @class = "btn btn-success btn-sm" })
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("ReportForExp",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

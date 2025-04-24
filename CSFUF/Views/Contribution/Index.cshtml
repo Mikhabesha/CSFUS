@@ -1,0 +1,160 @@
+﻿
+@model IEnumerable<CSFUF.Models.ConReg>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="ttext">
+    <h4 class="texts">  የመዋጮ ክፍል አከፋፋይ </h4>
+</div>
+@Html.ActionLink("Export data", "ExportDownloads", new { ReportType = "Excel" }, new { @class = "btn btn-success btn-sm" })
+<div class="ttext">
+    <h5 class="texts"> ከምዝገባ ክፍል የመጡ ፋይሎች</h5>
+</div>
+
+@using (Html.BeginForm("Index", "Contribution", FormMethod.Get))
+{
+<div class="rectangle">
+    <h5>የጡረተኛ መ/ቁ ያስገቡ ፡</h5>
+    @Html.TextBox("searching", null, "--መ.ቁ ያስገቡ--", htmlAttributes: new { @class = "form-control" })
+    <label class="alert-danger">@ViewBag.Message</label>    <br />
+    <input type="submit" value="ይፈልጉ" class="btn btn-success btn-sm" /><br />
+    @Html.ActionLink("Refresh🔄", "Index", "Contribution")
+
+</div>
+    <style>
+        .rectangle {
+            width: 25%;
+            float: left;
+           
+            padding: 30px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px #23297a;
+        }
+    </style>
+}
+
+
+@using (Html.BeginForm("Index", "Contribution", FormMethod.Post))
+{
+
+    <div class="rectangle2">
+        <h5>ወይም በቀን ፡ </h5>
+        <span>ከ ዕለት : </span><input type="date" class="form-control " name="Start" required="required" />
+        <span>እስከ ዕለት : </span><input type="date" class="form-control " name="End" required="required" />
+        <input type="submit" value="መረጃውን ይፈልጉ" class="btn btn-success btn-sm" />
+        <label class="alert-success">Tottal Data : @ViewBag.Counting2</label>
+        <label class="alert-danger">@ViewBag.Message2</label>
+    </div>
+
+
+    <style>
+        .rectangle:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+
+        .rectangle2:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+        .ttext {
+            border-radius: 5px;
+            background-color: #23297a;
+            width: 15%;
+        }
+        .texts{
+            color : whitesmoke;
+        }
+        .table td {
+            color: #025db2;
+        }
+
+        .table th {
+            color: #023767;
+        }
+
+        .table {
+            width: 150%;
+            float: right;
+            clear: left;
+            margin-left: 15px;
+        }
+
+        /*.contain {
+            display: flex;
+            gap: 15px;*/ /* Space between columns */
+        /*}*/
+
+        .rectangle2 {
+            width: 25%;
+            float: inline-start;
+          
+            padding: 13px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>  
+            <th>
+                @Html.DisplayNameFor(model => model.PrivateIDNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateRecieved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTransfered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedExpert)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrivateIDNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateRecieved)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTransfered)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignedExpert)
+                </td>
+                <td>
+                    @if (item.AssignedExpert == "አልተመደበም" || item.AssignedExpert == null)
+                    {
+                        <span><a href="@Url.Action("AssignExp", "Contribution", new { id = item.Id })" class="btn btn-success btn-sm" style="display: inline-block;">መድብ</a></span>
+                        <span><a href="@Url.Action("Delete", "Contribution", new { id = item.Id })" class="btn btn-warning btn-sm" style="display: inline-block;">ተመላሽ</a></span>
+                    }
+
+                    <a href="@Url.Action("Details", "Contribution", new { id = item.Id })" class="btn btn-primary btn-sm" style="display: inline-block;">መግለጫ</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+}

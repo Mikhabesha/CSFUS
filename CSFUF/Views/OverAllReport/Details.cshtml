@@ -1,0 +1,243 @@
+﻿@model CSFUF.Models.Report
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>መግለጫ</h2>
+<a title="Print Data" alt="Print Data" onclick="window.print();" target="_blank" style="cursor:pointer;"> Print Data</a>
+
+<div>
+    <h4>ሪፖርት</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgTIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgTIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Allowance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allowance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrivateIDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrivateIDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRegistered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRegistered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTransferedToCon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTransferedToCon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredExpertName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredExpertName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConExpertName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConExpertName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocStatusOfReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocStatusOfReg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocStatusOfCon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocStatusOfCon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedConExpert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedConExpert)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskRecievedDateCon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaskRecievedDateCon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTransferedToDecFromCon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTransferedToDecFromCon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedDecExpert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedDecExpert)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecievedToDecExpert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecievedToDecExpert)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTransferedOfDecExpert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTransferedOfDecExpert)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocStatusOfDec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocStatusOfDec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedApprover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedApprover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentDateRecived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentDateRecived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedRegion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedRegion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Index")
+</p>

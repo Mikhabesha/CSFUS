@@ -1,0 +1,422 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|h:\\backinusb\\csfuf v6\\csfuf\\csfuf\\views\\decisiondistro\\distro2forbt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\decisiondistro\\distro2forbt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|h:\\backinusb\\csfuf v6\\csfuf\\csfuf\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\shared\\_contributiondistrolayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\shared\\_contributiondistrolayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\customertracker\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\customertracker\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\customertracker\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\customertracker\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\customer\\reportforexp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\customer\\reportforexp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\customer\\newview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\customer\\newview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\customer\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\customer\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\conreg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\conreg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\customerreg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\customerreg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\finalmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\finalmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\finalmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\finalmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\conexpdateandnamesearch_result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\conexpdateandnamesearch_result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\finalmodel.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\finalmodel.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\finalmodel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\finalmodel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\decisionexperts2\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\decisionexperts2\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\content\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\content\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\views\\decisionexperts2\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\views\\decisionexperts2\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\controllers\\decisionexperts2controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\controllers\\decisionexperts2controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\controllers\\searchdatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\controllers\\searchdatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\controllers\\approvercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\controllers\\approvercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:1:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\finalmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}",
+      "RelativeMoniker": "D:1:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\finalmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|H:\\BackInUsb\\CSFUF v6\\CSFUF\\csfuf\\models\\finalmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}",
+      "RelativeMoniker": "D:2:0:{A35523BD-24F7-43C4-9854-C6DA170D82C8}|CSFUF\\CSFUF.csproj|solutionrelative:csfuf\\models\\finalmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Distro2ForBT.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\DecisionDistro\\Distro2ForBT.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\DecisionDistro\\Distro2ForBT.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\DecisionDistro\\Distro2ForBT.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\DecisionDistro\\Distro2ForBT.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T11:41:42.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Controllers\\CustomerController.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "CSFUF\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAI4CAAAAAAAAAAAQwH8CAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T07:00:16.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ContributionDistroLayout.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\Shared\\_ContributionDistroLayout.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\Shared\\_ContributionDistroLayout.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\Shared\\_ContributionDistroLayout.cshtml*",
+              "RelativeToolTip": "CSFUF\\Views\\Shared\\_ContributionDistroLayout.cshtml*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T06:48:59.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\_ViewStart.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T06:45:37.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\CustomerTracker\\Details.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\CustomerTracker\\Details.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\CustomerTracker\\Details.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\CustomerTracker\\Details.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAIwHUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T06:45:21.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReportForExp.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\Customer\\ReportForExp.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\Customer\\ReportForExp.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\Customer\\ReportForExp.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\Customer\\ReportForExp.cshtml",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2025-04-11T06:45:22.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NewView.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\Customer\\NewView.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\Customer\\NewView.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\Customer\\NewView.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\Customer\\NewView.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAEAAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2025-04-11T06:45:22.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\Customer\\Create.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\Customer\\Create.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\Customer\\Create.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\Customer\\Create.cshtml",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAADwAAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2025-04-11T06:45:22.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ConReg.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\ConReg.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\ConReg.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\ConReg.cs",
+              "RelativeToolTip": "CSFUF\\Models\\ConReg.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAA5wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2025-04-11T06:45:22.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CustomerReg.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\CustomerReg.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\CustomerReg.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\CustomerReg.cs",
+              "RelativeToolTip": "CSFUF\\Models\\CustomerReg.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2025-04-11T06:45:22.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FinalModel.Context.tt",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.Context.tt",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\FinalModel.Context.tt",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.Context.tt",
+              "RelativeToolTip": "CSFUF\\Models\\FinalModel.Context.tt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2025-04-11T06:45:22.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Startup.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Startup.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Startup.cs",
+              "RelativeToolTip": "CSFUF\\Startup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T06:45:22.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\CustomerTracker\\Index.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\CustomerTracker\\Index.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\CustomerTracker\\Index.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\CustomerTracker\\Index.cshtml",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2025-04-11T06:45:22.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ConExpDateAndNameSearch_Result.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\ConExpDateAndNameSearch_Result.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\ConExpDateAndNameSearch_Result.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\ConExpDateAndNameSearch_Result.cs",
+              "RelativeToolTip": "CSFUF\\Models\\ConExpDateAndNameSearch_Result.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2025-04-11T06:45:22.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FinalModel.tt",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.tt",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\FinalModel.tt",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.tt",
+              "RelativeToolTip": "CSFUF\\Models\\FinalModel.tt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2025-04-11T06:45:22.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FinalModel.Designer.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.Designer.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\FinalModel.Designer.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.Designer.cs",
+              "RelativeToolTip": "CSFUF\\Models\\FinalModel.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2025-04-11T06:45:22.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FinalModel.Context.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.Context.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\FinalModel.Context.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.Context.cs",
+              "RelativeToolTip": "CSFUF\\Models\\FinalModel.Context.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAcwFgAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2025-04-11T06:45:22.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FinalModel.edmx [Diagram1]",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.edmx",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\FinalModel.edmx",
+              "ToolTip": "C:\\Users\\Mik\\Desktop\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-04-11T06:45:22.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Content\\bootstrap.css",
+              "RelativeDocumentMoniker": "CSFUF\\Content\\bootstrap.css",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Content\\bootstrap.css",
+              "RelativeToolTip": "CSFUF\\Content\\bootstrap.css",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAGMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-11T06:45:22.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\DecisionExperts2\\Edit.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\DecisionExperts2\\Edit.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\DecisionExperts2\\Edit.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\DecisionExperts2\\Edit.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACsAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2025-04-11T06:45:22.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\DecisionExperts2\\Index.cshtml",
+              "RelativeDocumentMoniker": "CSFUF\\Views\\DecisionExperts2\\Index.cshtml",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Views\\DecisionExperts2\\Index.cshtml",
+              "RelativeToolTip": "CSFUF\\Views\\DecisionExperts2\\Index.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAEkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2025-04-11T06:45:22.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DecisionExperts2Controller.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Controllers\\DecisionExperts2Controller.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Controllers\\DecisionExperts2Controller.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Controllers\\DecisionExperts2Controller.cs",
+              "RelativeToolTip": "CSFUF\\Controllers\\DecisionExperts2Controller.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAAEcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T06:45:22.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SearchDatesController.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Controllers\\SearchDatesController.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Controllers\\SearchDatesController.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Controllers\\SearchDatesController.cs",
+              "RelativeToolTip": "CSFUF\\Controllers\\SearchDatesController.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAAAJwAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T06:45:22.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FinalModel.edmx [Diagram1]",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.edmx",
+              "RelativeDocumentMoniker": "CSFUF\\Models\\FinalModel.edmx",
+              "ToolTip": "C:\\Users\\Mik\\Desktop\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Models\\FinalModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-04-11T06:45:22.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ApproverController.cs",
+              "DocumentMoniker": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Controllers\\ApproverController.cs",
+              "RelativeDocumentMoniker": "CSFUF\\Controllers\\ApproverController.cs",
+              "ToolTip": "H:\\BackInUsb\\CSFUF v6\\CSFUF\\CSFUF\\Controllers\\ApproverController.cs",
+              "RelativeToolTip": "CSFUF\\Controllers\\ApproverController.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAuwDoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T06:45:22.08Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

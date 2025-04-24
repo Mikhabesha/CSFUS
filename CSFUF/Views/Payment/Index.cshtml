@@ -1,0 +1,212 @@
+﻿@model IEnumerable<CSFUF.Models.Payment>
+
+@{
+    ViewBag.Title = "Index";
+}
+@*@{
+        Layout = "~/Views/Shared/_PaymentLayoutPage1.cshtml";
+    }*@
+<div class="texts"><h3 class="ttext">የክፍያ ገጽ</h3></div>
+
+@using (Html.BeginForm("Index", "Payment", FormMethod.Get))
+{
+    <div class="rectangle">
+        <div class="for-Pad">
+            <h5>የጡረተኛ መ/ቁ ያስገቡ ፡</h5>
+            @Html.TextBox("ExpNameToSearch", null, "--መ.ቁ ያስገቡ--", htmlAttributes: new { @class = "form form-control" })
+        </div>
+
+        <input type="submit" value="ይፈልጉ" class="btn btn-success btn-sm" /> <br />
+        <label class="alert-danger">@ViewBag.Message</label>
+
+
+    </div>
+
+    <style>
+        .rectangle:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 2px 2px 5px #002395;
+        }
+
+        .rectangle2:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 2px 2px 5px #002395;
+        }
+        .for-Pad {
+            padding: 13px;
+        }
+
+        .rectangle {
+            width: 15%;
+            float: left;
+            padding: 1px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            background-color: lightgray;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+}
+
+
+@using (Html.BeginForm("Index", "Payment", FormMethod.Post))
+{
+    <div class="rectangle2">
+        <div class="form-group d-flex">
+            @*<h5>ወይም በቀን ፡ </h5> <br />*@
+            <div class="d-flex">
+                <h5>Expert Name :</h5>
+                <input type="text" class="form form-control" name="Search" />
+            </div>
+            <div class="d-flex">
+                <h5> Start Date :</h5>
+                <input type="date" class="form form-control" name="Start" required="required" />
+            </div>
+            <div class="d-flex">
+                <h5> End Date :</h5>
+                <input type="date" class="form form-control" name="End" required="required" />
+            </div>
+            <div class="btn_">
+                <input type="submit" class="btn btn-success btn-sm" value="Get Records" />
+            </div>
+            <label class="alert-danger">@ViewBag.Message2</label> <br />
+        </div>
+        <label class="alert-success">Totall Records :</label> @ViewBag.Count
+        <br />
+        <span>Search Result </span> @Html.Label("From : ") @ViewBag.Start <span> @Html.Label("To :")</span> @ViewBag.End <br />
+        @Html.ActionLink("Refresh🔄", "Index", "Payment")
+    </div>
+
+
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Allowance)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PensionerID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BankBranch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Allowance)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bank)
+                </td>
+             
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BankBranch)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                <td>
+                    @Html.ActionLink("ሪጅን መድብ", "Edit", new { id = item.Id }, new { @class = "btn btn-success btn-sm" }) |
+                    @Html.ActionLink("ዝርዝር", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) |
+
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+<style>
+    .alert-danger {
+        margin-top: 45px;
+        margin-left: 10px;
+    }
+
+    .btn_ {
+        margin-top: 38px;
+        margin-left: 5px;
+    }
+
+    .btn {
+        margin-left: 15px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ttext {
+        border-radius: 5px;
+        background-color: #23297a;
+        width: 35%;
+        box-shadow: 2px 2px 5px #23297a;
+    }
+
+    .texts {
+        color: whitesmoke;
+        width: 25%;
+    }
+
+    .table td {
+        color: #025db2;
+    }
+
+    .table th {
+        color: #023767;
+    }
+
+    .table {
+        width: 90%;
+        float: left;
+        clear: right;
+        margin-left: 15px;
+        box-shadow: 5px 5px 5px 5px #23297a;
+    }
+
+    .rectangle2 {
+        width: 75%;
+        float: inline-start;
+     
+        padding: 14px;
+        margin-bottom: 15px;
+        margin-right: 15px;
+        margin-top: 15px;
+        border-radius: 5px;
+        background-color: lightgray;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .form {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+</style>

@@ -1,0 +1,69 @@
+﻿@model CSFUF.Models.ConExpTask
+
+@{
+    ViewBag.Title = "Edit";
+}
+@*@{
+    Layout = "~/Views/Shared/_ContributionDistroLayout.cshtml";
+}*@
+
+<h2>ማስተካከያ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="panel panel-body">
+    <h4>ወዋጮ</h4>
+
+    <hr />
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.FullName)
+    @Html.HiddenFor(model => model.OrgName)
+    @Html.HiddenFor(model => model.ArchiveNo)
+    @Html.HiddenFor(model => model.OrgTIN)
+    @Html.HiddenFor(model => model.DocCount)
+    @Html.HiddenFor(model => model.Allowance)
+    @Html.HiddenFor(model => model.PhoneNo)
+    @Html.HiddenFor(model => model.GovIDNo)
+    @Html.HiddenFor(model => model.PrivateIDNo)
+    @Html.HiddenFor(model => model.MotherName)
+    @Html.HiddenFor(model => model.BDate)
+    @Html.HiddenFor(model => model.DueDate)
+    @Html.HiddenFor(model => model.DateRecieved)
+    @Html.HiddenFor(model => model.DateTransfered)
+    @Html.HiddenFor(model => model.Gender)
+    @Html.HiddenFor(model => model.AssignedExpert)
+    @Html.HiddenFor(model => model.Region)
+
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocStatus, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.DropDownListFor(model => model.DocStatus, new SelectList(ViewBag.list1), "Status", new { @class = " form-control ", @required = "required" })
+            @Html.ValidationMessageFor(model => model.DocStatus)
+        </div>
+        <hr />
+        <br />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Remark, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Remark, new { @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.Remark)
+        </div>
+    </div>
+
+    <br />
+    <hr />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("ወደዝርዝር ተመለስ", "Index")
+</div>

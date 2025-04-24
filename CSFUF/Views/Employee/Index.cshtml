@@ -1,0 +1,87 @@
+﻿@model IEnumerable<CSFUF.Models.EmployeeDB>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employees</h2>
+
+<p>
+    @Html.ActionLink("Register a New Account", "Register", "Account")
+    <br />
+    <br />
+    @Html.ActionLink("Register a New Employee", "Create")
+    <br />
+    @Html.ActionLink("View Roles", "Index", "Role")
+    <br />
+    @Html.ActionLink("Create Roles", "Create", "Role")
+    <br />
+    @Html.ActionLink("Assign Roles", "RegisterRole", "Account")
+    <br />
+    @Html.ActionLink("Create Pension Type", "CreatePension", "PensionTypes")
+    <br />
+    @Html.ActionLink("Create Region", "CreateRegion", "Payment")
+
+</p>
+
+@using (Html.BeginForm("Index", "Employee", FormMethod.Get))
+{
+    <h5>Search By Name</h5>
+    @Html.TextBox("searching")
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <br />
+    <br />
+}
+<table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Office)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Office)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,19 @@
+﻿@using CSFUF.Models;
+@model dynamic 
+@{
+    ViewBag.Title = "overAll";
+}
+<h2>Customer's info. From Registration</h2>
+
+Name :
+@foreach (var item in Model.CustomerRegs)
+{
+    @item.FullName
+<br />
+}
+    info:
+@foreach (var item in Model.ConRegs)
+{
+    @item.DocStatus
+    <br />
+}

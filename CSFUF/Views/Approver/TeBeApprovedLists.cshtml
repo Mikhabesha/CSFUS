@@ -1,0 +1,168 @@
+﻿@model IEnumerable<CSFUF.Models.ApproverTask>
+
+@{
+    ViewBag.Title = "TeBeApprovedLists";
+}
+@*@{
+        Layout = "~/Views/Shared/_ApproverLayoutPage1.cshtml";
+    }*@
+<div class="texts"><h3 class="ttext">Customers Waiting Te Be Approved</h3></div>
+
+@using (Html.BeginForm("TeBeApprovedLists", "Approver", FormMethod.Get))
+{
+<div class="rectangle">
+    <h5>የጡረተኛ መ/ቁ ያስገቡ ፡</h5>
+    @Html.TextBox("searchID", null, "--ስሞን ያስገቡ--", htmlAttributes: new { @class = "form form-control" })
+    <label class="alert-danger">@ViewBag.Message</label>
+    <input type="submit" value="Search" class="btn btn-success btn-sm" /> <br />
+    @Html.ActionLink("Refresh🔄", "TeBeApprovedLists", "Approver")
+</div>
+    <style>
+        .rectangle {
+            width: 25%;
+            float: left;
+          
+            padding: 20px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px #23297a;
+        }
+    </style>
+}
+@using (Html.BeginForm("TeBeApprovedLists", "Approver", FormMethod.Post))
+{
+<div class="rectangle2">
+
+    <span>Start Date : </span>
+    <input type="date" class="form form-control" name="Start" required="required" />
+    <span>End Date : </span>
+    <input type="date" class="form form-control" name="End" required="required" />
+    <input type="submit" class="btn btn-success btn-sm" value="Get Records" />
+    <label class="alert-danger">@ViewBag.Message2</label>
+</div>
+    <style>
+        .ttext {
+            border-radius: 5px;
+            background-color: #23297a;
+            width: 35%;
+            box-shadow: 5px 5px 10px #23297a;
+        }
+
+        .texts {
+            color: whitesmoke;
+        }
+
+        .table td {
+            color: #025db2;
+        }
+
+        .table th {
+            color: #023767;
+        }
+
+        .table {
+            width: 150%;
+            float: right;
+            clear: left;
+            margin-left: 15px;
+        }
+        .rectangle:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+
+        .rectangle2:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+        .rectangle2 {
+            width: 25%;
+            float: inline-start;
+           
+            padding: 3px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .form {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>
+                የደንበኛ ሙሉ ስም
+            </th>
+            <th>
+                የጡረተኛ የግ/መ/ቁ
+            </th>
+            <th>
+                የተቀበለበት ቀን
+            </th>
+            <th>
+                ያስተላለፈበት ቀን
+            </th>
+            <th>
+                የተመደበው አፕሩቨር
+            </th>
+            <th>
+                የተመደበው የዉሳኔ ባለሞያ
+            </th>
+            <th>
+                የአፕሩቫል ሁኔታ
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrivateIDNo)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateRecieved)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTransfered)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignedApprover)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignedExpertNames)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApprovalStatus)
+                </td>
+
+                <td>
+                    @if (item.ApprovalStatus != "Approved")
+                    {
+                        @Html.ActionLink("አስተካክል", "Edit", new { id = item.Id }, new { @class = "btn btn-success btn-sm" })
+
+                    }
+                    @Html.ActionLink("መግለጫ", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                </td>
+            </tr>
+        }
+    </table>
+}

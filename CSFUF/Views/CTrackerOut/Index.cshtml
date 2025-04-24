@@ -1,0 +1,123 @@
+﻿@model IEnumerable<CSFUF.Models.Report>
+@{
+    ViewBag.Title = "ፈልግ";
+}
+@{
+    Layout = "~/Views/_LayoutPageLogin.cshtml";
+}
+<body class="bbody">
+    <div class="agileits">
+        <div class="alert-base">
+            <h3 class="alert-primary"> POESSA - የደንበኛ አገልግሎት መከታተያ ሲስተም</h3>
+        </div>
+        <div class="w3-agileits-info">
+            @using (Html.BeginForm("Index", "CTrackerOut", FormMethod.Post))
+            {
+                <p class="w3agileits">የጡረታ መለያ ቁጥር ያስገቡ</p>
+
+                <div class="form-group has-feedback w3ls">
+                    <label class='control-label sr-only' for='username'>ቁጥሮን ያስገቡ</label>
+                    @Html.TextBox("searching", null, "--መ.ቁ ያስገቡ--", htmlAttributes: new { @class = "form-control", @placeholder = "መለያ ቁጥሮን ያስገቡ" })
+                    <span class='glyphicon glyphicon-ok form-control-feedback'></span>
+                </div>
+
+                <div class='submit w3-agile'>
+                    <input class='btn btn-lg' type='submit' value='ይፈልጉ'>
+                </div>
+
+                <br />
+                <div class="contain">
+                    @if (Model != null && Model.Any())
+                    {
+                        <table class="table table-bordered table-hover table-condensed">
+                            <tr>
+                                <th>
+                                    የደንበኛ ሙሉ ስም
+                                </th>
+                                <th>
+                                    ስልክ ቁጥር
+                                </th>
+                                <th>
+                                    የጡረተኛ መ.ቁ
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhoneNo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PrivateIDNo)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("መግለጫ", "DetailsForOut", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) |
+                                    </td>
+                                </tr>
+
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <span class="text-danger">@ViewBag.ErrorMsg</span>
+                    }
+
+                </div>
+            }
+        </div>
+
+    </div>
+</body>
+
+<style>
+    .alert-primary {
+        width: 65%;
+        color: aliceblue;
+        display: flex;
+        margin-left: 220px;
+    }
+
+    .alert-base {
+        background-color: #003153;
+        color: ActiveBorder;
+        border-radius: 10px;
+        width: 75%;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        margin-left: 50px;
+    }
+        .alert-base:hover {
+            background-color: #004242
+        }
+    /* .agileits {
+        background-color: #003153;
+    }*/
+    .contain {
+        width: 55%;
+    }
+
+    .w3-agileits-info {
+        display: flow;
+        width: 75%;
+        float: left;
+        padding: 18px;
+        border-radius: 10px;
+        background-color: lightgray;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        margin-left: 50px;
+    }
+
+        .w3-agileits-info:hover {
+            background-color: #bfc1c2;
+            animation: highlight 0.2s ease-in-out;
+        }
+
+    .bbody {
+        background-color: #838996;
+    }
+</style>

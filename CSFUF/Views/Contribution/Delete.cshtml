@@ -1,0 +1,128 @@
+﻿@model CSFUF.Models.ConReg
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>መመለሻ</h2>
+
+<h3>ይህን ፋይል ለመመለስ ያረጋግጡ?</h3>
+<div>
+    <h4>ወደ ምዝገባ ክፍል</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgTIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgTIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrivateIDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrivateIDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecieved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecieved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTransfered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTransfered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedExpert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedExpert)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="አረጋግጥ" class="btn btn-danger" /> |
+            @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Index")
+        </div>
+    }
+</div>

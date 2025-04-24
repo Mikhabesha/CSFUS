@@ -1,0 +1,102 @@
+﻿ @model CSFUF.Models.DecisionExpertsTask2
+
+@{
+    ViewBag.Title = "Edit";
+}
+@*@{
+    Layout = "~/Views/Shared/_DecisionLayoutPage1.cshtml";
+}*@
+
+<h2>አስተካክል</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>የዉሳኔ ክፍል ባለሞያ</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.FullName)
+    @Html.HiddenFor(model => model.OrgName)
+    @Html.HiddenFor(model => model.ArchiveNo)
+    @Html.HiddenFor(model => model.OrgTIN)
+    @Html.HiddenFor(model => model.DocCount)
+    @Html.HiddenFor(model => model.PhoneNo)
+    @Html.HiddenFor(model => model.GovIDNo)
+    @Html.HiddenFor(model => model.PrivateIDNo)
+    @Html.HiddenFor(model => model.MotherName)
+    @Html.HiddenFor(model => model.BDate)
+    @Html.HiddenFor(model => model.DateRecieved)
+    @Html.HiddenFor(model => model.DateTransfered)
+    @Html.HiddenFor(model => model.Gender)
+    @Html.HiddenFor(model => model.DocStatus)
+    @Html.HiddenFor(model => model.AssignedExpert)
+    @Html.HiddenFor(model => model.ApprovalStatus)
+    @Html.HiddenFor(model => model.Region)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DueDate, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.DueDate, new { @class = " form-control ", @type = "date", @required = "required" })
+            @Html.ValidationMessageFor(model => model.DueDate)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PaymentStatus, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.PaymentStatus, new SelectList(ViewBag.ListNames), "--ይምረጡ--", new { @class = " form-control ", @required = "required" })
+            @Html.ValidationMessageFor(model => model.PaymentStatus)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Bank, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Bank, new List<SelectListItem>
+{
+    new SelectListItem { Text = "CBE ተፈራ ደግፌ ቅርንጫፍ"},
+    new SelectListItem { Text = "አቢሲኒያ ባንክ"},
+    new SelectListItem { Text = "ወጋገን ባንክ"}
+},
+
+new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Bank)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BankBranch, new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.BankBranch, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.BankBranch)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Allowance, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Allowance, new { @class = " form-control ", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Allowance)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Serial Number", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PensionerID, new { @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.PensionerID)
+        </div>
+    </div>
+</div>
+
+     <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="አረጋግጥ" class="btn btn-primary" />
+            </div>
+        </div>
+    
+<div>
+    @Html.ActionLink("ወደ ዝርዝር ተመለስ", "Index")
+</div>
+    }

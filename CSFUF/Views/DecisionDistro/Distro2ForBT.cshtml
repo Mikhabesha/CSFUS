@@ -1,0 +1,212 @@
+﻿@model IEnumerable<CSFUF.Models.DecisionDistro2>
+@*@model PagedList.IPagedList<CSFUF.Models.DecisionDistro2>*@
+
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Distro2";
+}
+
+@*@{
+        Layout = "~/Views/Shared/_DecisionLayoutPage1.cshtml";
+    }*@
+<div class="ttext">
+    <h4 class="texts">የዉሳኔ ክፍል አከፋፋይ</h4>
+</div>
+<hr />
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+@using (Html.BeginForm("Distro2ForBT", "DecisionDistro", FormMethod.Get))
+{<div class="rectangle">
+        <h5>የጡረተኛ መ/ቁ ያስገቡ ፡</h5>
+        @Html.TextBox("searchString", null, "--መ.ቁ ያስገቡ--", htmlAttributes: new { @class = "form-control" })
+        <label class="alert-danger">@ViewBag.Message</label>
+        <br />
+
+        <input type="submit" value="ይፈልጉ" class="btn btn-success btn-sm" />
+    </div>
+    <style>
+        .rectangle:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+
+        .rectangle2:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+
+        .form {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .ttext {
+            border-radius: 5px;
+            background-color: #23297a;
+            width: 15%;
+            box-shadow: 5px 5px 10px #23297a;
+        }
+
+        .texts {
+            color: whitesmoke;
+        }
+
+        .table td {
+            color: #025db2;
+        }
+
+        .table th {
+            color: #023767;
+        }
+
+        .table {
+            width: 150%;
+            float: right;
+            clear: left;
+            margin-left: 15px;
+        }
+
+        .rectangle2 {
+            width: 25%;
+            float: inline-start;
+            padding: 3px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px #23297a;
+        }
+
+        .form {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+}
+
+@using (Html.BeginForm("Distro2ForBT", "DecisionDistro", FormMethod.Post))
+{
+    <div class="rectangle2">
+
+        <span>ከ ዕለት : </span><input type="date" class="form form-control" name="Start" required="required" />
+        <span>እስከ ዕለት : </span><input type="date" class="form form-control" name="End" required="required" />
+        <input type="submit" value="መረጃውን ይፈልጉ" class="btn btn-success btn-sm" />
+        <label class="alert-danger">@ViewBag.Message2</label>
+        @Html.ActionLink("Refresh🔄", "Distro2ForBT", "DecisionDistro")
+
+    </div>
+
+    <style>
+        .rectangle {
+            width: 25%;
+            float: left;
+            padding: 30px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px #23297a;
+        }
+
+        .form {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+}
+<table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <th>
+            ሙሉ ስም
+            @*@Html.ActionLink("Full Name", "Distro2", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+
+        <th>
+            ስልክ ቁጥር
+        </th>
+
+        <th>
+            የጡረተኛ መታወቂያ ቁ.
+        </th>
+
+        <th>
+            የተረከበበት ቀን
+            @*@Html.ActionLink("Date Recieved", "Distro2", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+
+        <th>
+            የተመደበው ባለሞያ ስም
+        </th>
+        <th>
+            የተመደበው አፕሩቨር ስም
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PrivateIDNo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRecieved)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedExpertNames)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssinedApprover)
+            </td>
+            <td>
+                @if (item.AssinedApprover == null)
+                {
+                    @Html.ActionLink("አፕሩቨር መድብ", "AssignApprover", new { id = item.Id }, new { @class = "btn btn-success btn-sm" })
+                }
+                else
+                {
+                    @Html.ActionLink("አፕሩቨር ቀይር", "AssignApprover", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+                }
+                |
+                @Html.ActionLink("ዝርዝር መግለጫ", "Details2", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>
+<style>
+    .table-hover tr:hover {
+        background-color: #eee;
+        animation: highlight 0.2s ease-in-out;
+    }
+
+    .table td {
+        color: #025db2;
+    }
+
+    .table th {
+        color: #023767;
+    }
+</style>
+@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Distro2",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@

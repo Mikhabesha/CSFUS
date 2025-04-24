@@ -1,0 +1,188 @@
+﻿@model IEnumerable<CSFUF.Models.Decision>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="texts"><h3 class="ttext">ዉሳኔ ክፍል</h3></div>
+<div class="texts"><h5 class="ttext">ከመዋጮ የመጡ ፋይሎች</h5></div>
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+
+    <hr />
+@using (Html.BeginForm("IndexForDistribution", "Decision", FormMethod.Get))
+{
+<div class="rectangle">
+    <h5>የጡረተኛ መ/ቁ ያስገቡ ፡</h5>
+    @Html.TextBox("ExpNameToSearch", null, "--መ.ቁ ያስገቡ--", htmlAttributes: new { @class = "form form-control" })
+    <label class="alert-danger">@ViewBag.Message</label>
+
+    <input type="submit" value="ይፈልጉ" class="btn btn-success btn-sm" /><br/>
+    @Html.ActionLink("Refresh🔄", "IndexForDistribution", "Decision")
+</div>
+    <style>
+        .rectangle:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+
+        .rectangle2:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+        .rectangle {
+            width: 25%;
+            float: left;
+          
+            padding: 30px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 10px #23297a;
+        }
+
+        .form {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+}
+
+
+@using (Html.BeginForm("IndexForDistribution", "Decision", FormMethod.Post))
+{
+    <div class="rectangle2">
+        <h5>ወይም በቀን ፡ </h5>
+        <span>ከ ዕለት : </span>
+        <input type="date" class="form form-control" name="Start" required="required" />
+        <span>እስከ ዕለት : </span>
+        <input type="date" class="form form-control" name="End" required="required" />
+        <input type="submit" value="መረጃውን ይፈልጉ" class="btn btn-success btn-sm" />
+        <label class="alert-danger">@ViewBag.Message2</label>
+        
+</div>
+        <style>
+            .ttext {
+                border-radius: 5px;
+                background-color: #23297a;
+                width: 15%;
+            }
+
+            .texts {
+                color: whitesmoke;
+            }
+
+            .table td {
+                color: #025db2;
+            }
+
+            .table th {
+                color: #023767;
+            }
+
+            .table {
+                width: 150%;
+                float: right;
+                clear: left;
+                margin-left: 15px;
+            }
+
+            .rectangle2 {
+                width: 25%;
+                float: inline-start;
+               
+                padding: 3px;
+                margin-bottom: 15px;
+                margin-right: 15px;
+                margin-top: 15px;
+                border-radius: 5px;
+                background-color: lightgray;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+            }
+
+            .form {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+        <br />
+        <br />
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OrgName)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.PrivateIDNo)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateRecieved)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AssignedExpertNames)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrgName)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PrivateIDNo)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateRecieved)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AssignedExpertNames)
+                        </td>
+                        <td>
+                            @if (item.AssignedExpertNames == "አልተመደበም")
+                            {
+                                @Html.ActionLink("ባለሙያ መድብ", "AssignExpForDistrubitor", new { id = item.Id }, new { @class = "btn btn-success btn-sm" })
+                            }
+                            |
+                            @Html.ActionLink("ዝርዝር", "DetailsForDistributor", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) |
+                        </td>
+                    </tr>
+                    </tbody>
+                    }
+            </table>
+        }
+<style>
+    .table-hover tr:hover {
+        background-color: #eee;
+        animation: highlight 0.2s ease-in-out;
+    }
+
+    .table td { 
+        color: #025db2;
+    }
+
+    .table th {
+        color: #023767;
+    }
+
+</style>

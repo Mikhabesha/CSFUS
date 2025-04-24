@@ -1,0 +1,163 @@
+﻿@model CSFUF.Models.Payment
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-1.12.4.js"></script>
+
+<h2>ማስተካከያ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>የክፍያ ክፍል</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.FullName)
+        @Html.HiddenFor(model => model.OrgName)
+        @Html.HiddenFor(model => model.ArchiveNo)
+        @Html.HiddenFor(model => model.OrgTIN)
+        @Html.HiddenFor(model => model.DocCount)
+        @Html.HiddenFor(model => model.Allowance)
+        @Html.HiddenFor(model => model.PhoneNo)
+        @Html.HiddenFor(model => model.GovIDNo)
+        @Html.HiddenFor(model => model.PrivateIDNo)
+        @Html.HiddenFor(model => model.MotherName)
+        @Html.HiddenFor(model => model.BDate)
+        @Html.HiddenFor(model => model.DueDate)
+        @Html.HiddenFor(model => model.DateRecieved)
+        @Html.HiddenFor(model => model.DateTransfered)
+        @Html.HiddenFor(model => model.Gender)
+        @Html.HiddenFor(model => model.DocStatus)
+        @Html.HiddenFor(model => model.AssignedExpert)
+        @Html.HiddenFor(model => model.Bank)
+        @Html.HiddenFor(model => model.PensionerID)
+        @Html.HiddenFor(model => model.ApprovalStatus)
+        @Html.HiddenFor(model => model.PaymentStatus)
+        @Html.HiddenFor(model => model.BankBranch)
+        @Html.HiddenFor(model => model.RegionForUser)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PayLetterPrepDay, new {@class = "control-label col-md-2" })
+            <div class=" col-md-10">
+                @Html.TextBoxFor(model => model.PayLetterPrepDay, new { @class = "form-control", @id = "pay", @required = "required", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.PayLetterPrepDay)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.issueDate, new {@class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.issueDate, new { @class = "form-control", @id = "Issue", @required = "required", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model=> model.issueDate)
+            </div>
+        </div>
+
+        <div class="form-group" id="seeAnotherFieldGroup">
+            @Html.LabelFor(model => model.Region, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Region, new SelectList(ViewBag.ListNames), "--ሪጅን ይምረጡ--", new { @class = "form-control", @id = "region" })
+                @Html.ValidationMessageFor(model => model.Region)
+            </div>
+        </div>
+
+        <div class="form-group">
+        </div>
+        <div class="form-group" id="otherFieldGroupDiv">
+            @Html.LabelFor(model => model.when, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.when, new { @class = "form-control w-100", @id = "when", @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.when)
+        </div>
+</div>
+        <div class="form-group" id="otherFieldGroupDiv2">
+            @Html.LabelFor(model => model.Recipent, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Recipent, new { @class = "form-control w-100", @id = "Recipent" })
+                @Html.ValidationMessageFor(model => model.Recipent)
+            </div>
+        </div>
+        <div class="form-group" id="otherFieldGroupDiv3">
+            @Html.LabelFor(model => model.RefNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.RefNo, new { @class = "form-control w-100", @id = "RefNo" })
+                @Html.ValidationMessageFor(model => model.RefNo)
+            </div>
+        </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+                }
+
+                <div>
+                    @Html.ActionLink("ወደ ዝርዝር ይመለሱ", "Index")
+                </div>
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+                @section scripts{
+                    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+                    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+                    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+                    <script type="text/javascript">
+                        $("#seeAnotherFieldGroup").change(function () {
+                            if ($('#region').val()) {
+                                $('#otherFieldGroupDiv').show();
+                                $('#otherFieldGroupDiv2').show();
+                                $('#otherFieldGroupDiv3').show();
+                                $('#when').attr('required', '');
+                                $('#when').attr('data-error', 'This field is required.');
+                                $('#Recipent').attr('required', '');
+                                $('#Recipent').attr('data-error', 'This field is required.');
+                                $('#RefNo').attr('required', '');
+                                $('#RefNo').attr('data-error', 'This field is required.');
+                            } else {
+                                $('#otherFieldGroupDiv').hide();
+                                $('#otherFieldGroupDiv2').hide();
+                                $('#otherFieldGroupDiv3').hide();
+                                $('#when').removeAttr('required');
+                                $('#when').removeAttr('data-error');
+                                $('#Recipent').removeAttr('required');
+                                $('#Recipent').removeAttr('data-error');
+                                $('#RefNo').removeAttr('required');
+                                $('#RefNo').removeAttr('data-error');
+                            }
+                        });
+                        $("#seeAnotherFieldGroup").trigger("change");
+                       
+        $(function () {
+            var date = new Date();
+            var currentMonth = date.getMonth();
+            var currentDate = date.getDate();
+            var currentYear = date.getFullYear();
+            $("#when").datepicker({
+                maxDate: new Date(currentYear, currentMonth, currentDate),
+                changeMonth: true,
+                changeYear: true
+
+            });
+            $("#Issue").datepicker({
+                maxDate: new Date(currentYear, currentMonth, currentDate),
+                changeMonth: true,
+                changeYear: true
+
+            });
+            $("#pay").datepicker({
+                maxDate: new Date(currentYear, currentMonth, currentDate),
+                changeMonth: true,
+                changeYear: true
+
+            });
+        });
+
+                    </script>
+                    @Scripts.Render("~/bundles/jqueryval")
+                }

@@ -1,0 +1,136 @@
+﻿@model IEnumerable<CSFUF.Models.DecisionExpertsTask>
+
+@{
+    ViewBag.Title = "Index";
+}
+@*@{
+    Layout = "~/Views/Shared/_DecisionLayoutPage1.cshtml";
+}*@
+
+<h2>የዉሳኔ ክፍል ባለሞያ</h2>
+
+@using (Html.BeginForm("Index", "DecisionExperts", FormMethod.Get))
+{
+    <h5>ስሞን ያስገቡ</h5> @Html.DropDownList("ExpNameToSearch",null, "--ስሞን ያስገቡ--", htmlAttributes:new {@class = "form-control"})
+     <br />
+    <input type="submit" value="ይፈልጉ" class="btn btn-primary" />
+
+}
+ <br />
+<table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.ArchiveNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgTIN)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.DocCount)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Allowance)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.GovIDNo)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.PrivateIDNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.BDate)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateRecieved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTransfered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedExpert)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.OrgName)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.ArchiveNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgTIN)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DocCount)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Allowance)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.PhoneNo)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.GovIDNo)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivateIDNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.BDate)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.DueDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateRecieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTransfered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedExpert)
+        </td>
+        <td>
+            @Html.ActionLink("አስተካክል", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("መግለጫ", "Details", new { id=item.Id }) |
+        </td>
+    </tr>
+}
+
+</table>

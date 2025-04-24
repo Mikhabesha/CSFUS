@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CSFUF.Models.CustomerReg>
+@{
+    ViewBag.Title = "Index";
+}
+@*@{
+    Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+}*@
+
+
+<h2>ምዝገባ</h2>
+
+    <table class="table-bordered col-md-4">
+        <tr>
+            <td>@Html.ActionLink("Create New/አዲስ መዝግብ", "Create", "Customer", new { @class = "btn btn-primary btn-sm btn-block" })
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <table class="table-bordered col-md-4">
+    <tr>
+        <td>
+            @Html.ActionLink("Report/ሪፖርት", "ReportForExp", "Customer", new { @class = "btn btn-primary btn-sm btn-block" })
+        </td>
+    </tr>
+</table>
+    <br />
+    <br />
+    <br />
+
+    <table class="table-bordered">
+
+        Search Options:
+        <tr>
+            <td>
+                @using (Html.BeginForm("SearchById", "Customer", FormMethod.Get))
+                {
+                    <input type="submit" value="--- በግ.መ.ቁ ይፈልጉ ---" class="btn btn-primary btn-sm btn-block" />
+                    <br />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @using (Html.BeginForm("SearchByMother", "Customer", FormMethod.Get))
+{
+    <input type="submit" value="--- በእናት ስም ይፈልጉ ---" class="btn btn-primary btn-sm btn-block" />
+                                    <br />
+}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @using (Html.BeginForm("SearchByPhone", "Customer", FormMethod.Get))
+{
+    <input type="submit" value="--- በስልክ ቁጥር ይፈልጉ ---   " class="btn btn-primary btn-sm btn-block" />
+                                    <br />
+}
+            </td>
+        </tr>
+    </table>
+
+
+<br />

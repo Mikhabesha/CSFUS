@@ -1,0 +1,176 @@
+﻿@model IEnumerable<CSFUF.Models.CustomerReg>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center>
+   
+    <hr />
+
+    @using (Html.BeginForm("Index", "SearchDates", FormMethod.Post))
+    {
+<div class=" CountsAndExport">
+    @Html.ActionLink("Export", "ExportDownloads", new { ReportType = "Excel" }, new { @class = "btn btn-success btn-sm" })
+    <br />
+    <br />
+    <br />
+
+
+    <label class="alert-success">Totall Records :</label> @ViewBag.listCount
+    <br />
+    <label class="alert-success">From Date :</label> @ViewBag.DateStart
+    <br />
+    <label class="alert-success">To Date :</label> @ViewBag.DateEnd
+
+</div>
+
+        <style>
+            .CountsAndExport {
+                width: 35%;
+                float: right;
+              
+                padding: 35px;
+                border-radius: 5px;
+                background-color: lightgray;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+            }
+        </style>
+
+        <div class="divForSearch">
+            <span>Expert Name : </span> @Html.DropDownList("Search", "-የባለሞያ ስም ይምረጡ-")<br />
+            <span>Start Date : </span><input type="date" name="Start" class="form-control" required="required" />
+            <span>End Date : </span><input type="date" name="End" class="form-control" required="required" />
+            <br />
+            <input type="submit" value="Get Records" class="btn btn-success btn-sm" />
+            <br />
+            @Html.ActionLink("Refresh🔄", "Index", "SearchDates")
+            <br />
+        </div>
+        <br />
+        <style>
+            .CountsAndExport:hover {
+                background-color: #bebbbb;
+                border-color: #ccc;
+                border: 1px solid deepskyblue;
+                box-shadow: 5px 5px 10px #002395;
+            }
+
+            .divForSearch:hover {
+                background-color: #bebbbb;
+                border-color: #ccc;
+                border: 1px solid deepskyblue;
+                box-shadow: 5px 5px 10px #002395;
+            }
+            .divForSearch {
+                width: 30%;
+                float: left;
+               
+                padding: 8px;
+                margin-bottom: 15px;
+                border-radius: 5px;
+                background-color: lightgray;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+            }
+        </style>
+
+
+        <div>
+            @Html.ActionLink("ወደ ሪፖርት ይመለሱ", "Report", "Customer")
+        </div>
+        <br/>
+        <hr />
+        <table class="table table-bordered table-hover table-condensed">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrgName)
+                </th>
+                
+
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNo)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.PrivateIDNo)
+                </th>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.DateRecieved)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateTransfered)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpertName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrgName)
+                    </td>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNo)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrivateIDNo)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateRecieved)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateTransfered)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpertName)
+                    </td>
+
+                    <td>
+
+                        @Html.ActionLink("መግለጫውን ይመልከቱ", "Details", new { id = item.Id }, new { @class = "btn btn-success btn-sm" }) |
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+
+</center>
+<style>
+    .table td {
+        color: #025db2;
+    }
+
+    .table th {
+        color: #023767;
+    }
+
+    .table {
+        width: 150%;
+        float: right;
+        clear: left;
+        margin-left: 15px;
+    }
+
+    /*.contain {
+        display: flex;
+        gap: 15px;*/ /* Space between columns */
+    /*}*/
+
+</style>

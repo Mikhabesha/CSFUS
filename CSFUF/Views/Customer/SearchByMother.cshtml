@@ -1,0 +1,171 @@
+﻿@model IEnumerable<CSFUF.Models.CustomerReg>
+
+@{
+    ViewBag.Title = "SearchByMother";
+}
+
+<h2>የምዝገባ መረጃ</h2>
+<br />
+@Html.ActionLink("Create New", "Create", new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Back to Main Page", "Index")
+<br />
+@using (Html.BeginForm("SearchByMother", "Customer", FormMethod.Get))
+{
+    <div class="rectangle">
+        <h5 class="texts">በእናት ስም ይፈልጉ</h5> @Html.TextBox("search", null, "--የእት ስም ያስገቡ--", htmlAttributes: new { @class = "form form-control" })
+        <input type="submit" value="Submit" class="btn btn-success btn-sm" />
+        <br />
+        <label class="alert-danger">@ViewBag.Message</label>
+
+        <br />
+        @Html.ActionLink("Refresh", "SearchByMother")
+    </div>
+
+    <style>
+        .table td {
+            color: #025db2;
+        }
+
+        .table th {
+            color: #023767;
+        }
+
+        .form {
+            margin-bottom: 15px;
+        }
+        .rectangle:hover {
+            background-color: #bebbbb;
+            border-color: #ccc;
+            border: 1px solid deepskyblue;
+            box-shadow: 5px 5px 10px #002395;
+        }
+
+        .rectangle {
+            width: 20%;
+            float: left;
+           
+            padding: 8px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: #23297a;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .texts {
+            color: #ffffff;
+        }
+
+        .table {
+            width: 150%;
+            float: right;
+            clear: left;
+            margin-left: 15px;
+        }
+
+        .contain {
+            display: flex;
+            gap: 15px; /* Space between columns */
+        }
+    </style>
+}
+<p>
+
+
+</p>
+<br />
+
+<br />
+<div class="contain">
+<table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayName("የደንበኛ ሙሉ ስም")
+        </th>
+        <th>
+            @Html.DisplayName("የድርጅት ስም")
+        </th>
+
+        <th>
+            @Html.DisplayName("የድርጅት ቲን")
+        </th>
+        <th>
+            @Html.DisplayName("የዶሴ ብዛት")
+        </th>
+      
+        <th>
+            @Html.DisplayName("ስልክ ቁጥር")
+        </th>
+
+        <th>
+            @Html.DisplayName("የጡረተኛ መ/ቁ")
+        </th>
+        <th>
+            @Html.DisplayName("የእት ስም")
+        </th>
+
+        <th>
+            @Html.DisplayName("ፆታ")
+        </th>
+        <th>
+            @Html.DisplayName("የዶክመንት ሁኔታ")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgTIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocCount)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PrivateIDNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                <span class="@(item.DocStatus == "Pending" ? "text-danger" : item.DocStatus == "Completed" ? "text-success" : "")">
+                    @Html.DisplayFor(modelItem => item.DocStatus)
+                </span>
+            </td>
+            <td>
+                @if (item.DateTransfered == null)
+                {
+                    @Html.ActionLink("አስተካክል", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+                }
+
+                @Html.ActionLink("ዝርዝር", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) |
+
+                @if (item.DocStatus == "Completed" & item.DateTransfered == null)
+                {
+                    @Html.ActionLink("አስተላልፍ", "SendTo", new { id = item.Id }, new { @class = "btn btn-success btn-sm" })
+                }
+            </td>
+        </tr>
+
+    }
+
+</table>
+</div>

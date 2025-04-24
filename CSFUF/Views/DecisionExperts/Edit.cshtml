@@ -1,0 +1,146 @@
+﻿@model CSFUF.Models.DecisionExpertsTask
+
+@{
+    ViewBag.Title = "Edit";
+}
+@*@{
+    Layout = "~/Views/Shared/_DecisionLayoutPage1.cshtml";
+}*@
+
+<h2>ማስተካከያ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="panel panel-body">
+    <h4>የውሳኔ ባለሙያ ገፅ</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.DocStatus)
+    @Html.HiddenFor(model => model.DateRecieved)
+    @Html.HiddenFor(model => model.BDate)
+    @Html.HiddenFor(model => model.DueDate)
+    @Html.HiddenFor(model => model.Region)
+    @*@Html.HiddenFor(model => model.DocStatus)*@
+
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.FullName, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.FullName, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.FullName)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.OrgName, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.OrgName, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.OrgName)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.ArchiveNo, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.ArchiveNo, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.ArchiveNo)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.OrgTIN, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.OrgTIN, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.OrgTIN)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocCount, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.DocCount, new { @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.DocCount)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.Allowance, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Allowance, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.Allowance)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.PhoneNo, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.PhoneNo, new { @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.PhoneNo)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.GovIDNo, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.GovIDNo, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.GovIDNo)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.PrivateIDNo, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.PrivateIDNo, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.PrivateIDNo)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.MotherName, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.MotherName, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.MotherName)
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Gender, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.Gender)
+        </div>
+    </div>
+    <hr />
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.DocStatus, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.DocStatus, new SelectList( ViewBag.list1 ),"--Status--", new { @class = " form-control ",@readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.DocStatus)
+            </div>
+        </div>
+        <hr />*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.AssignedExpert, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.AssignedExpert, new { @readonly = "readonly", @class = " form-control " })
+            @Html.ValidationMessageFor(model => model.AssignedExpert)
+        </div>
+    </div>
+    <hr />
+    <hr />
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="አረጋግጥ" class="btn btn-primary" />
+        </div>
+    </div>
+    <hr />
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "filterByUserName")
+</div>

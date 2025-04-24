@@ -1,0 +1,196 @@
+﻿@model IEnumerable<CSFUF.Models.DecisionExpertsTask2>
+
+@{
+    ViewBag.Title = "Index";
+}
+@*@{
+        Layout = "~/Views/Shared/_DecisionLayoutPage1.cshtml";
+    }*@
+
+<div class="ttext">
+    <h3 class="texts">አፕሩቭ የተደረጉ ዶኩመንቶች</h3>
+ </div>
+    <hr />
+    @using (Html.BeginForm("Index", "DecisionExperts2", FormMethod.Get))
+    {
+        <div class="rectangle">
+            <h5>የጡረተኛ መ/ቁ ያስገቡ ፡</h5>
+            @Html.TextBox("ExpNameToSearch", null, "--መ.ቁ ያስገቡ--", htmlAttributes: new { @class = "form form-control" })
+            <label class=" alert-danger">@ViewBag.Message</label>
+            <input type="submit" value="ይፈልጉ" class="btn btn-success btn-sm" /> <br />
+            @Html.ActionLink("Refresh", "Index", "DecisionExperts2")
+
+        </div>
+        <style>
+            .rectangle {
+                width: 25%;
+                float: left;
+                padding: 47px;
+                margin-bottom: 15px;
+                margin-right: 15px;
+                margin-top: 15px;
+                border-radius: 5px;
+                background-color: lightgray;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+            }
+                .rectangle:hover {
+                    background-color: #bebbbb;
+                    border-color: #ccc;
+                    border: 1px solid deepskyblue;
+                    box-shadow: 5px 5px 10px #002395;
+                }
+            .rectangle2:hover {
+                background-color: #bebbbb;
+                border-color: #ccc;
+                border: 1px solid deepskyblue;
+                box-shadow: 5px 5px 10px #002395;
+            }
+            .form {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+    }
+
+
+    @using (Html.BeginForm("Index", "DecisionExperts2", FormMethod.Post))
+    {
+        // <span>Assigned Expert Name</span><input type="text" name="Name" disabled="disabled" />
+        <div class="rectangle2">
+            <h5>ወይም በቀን ፡ </h5>
+
+            <span>Start Date:</span>
+            <input type="date" class="form form-control" name="Start" required="required" />
+            <span>End Date:</span>
+            <input type="date" class="form form-control" name="End" required="required" />
+            <input type="submit" class="btn btn-success btn-sm" value="Search Data" />
+
+            <label class=" alert-danger">@ViewBag.Message2</label>
+
+        </div>
+        <style>
+            .ttext {
+                border-radius: 5px;
+                background-color: #23297a;
+                width: 22%;
+                box-shadow: 5px 5px 10px #23297a;
+                
+            }
+
+            .texts {
+                color: whitesmoke;
+                margin-left: 10px;
+            }
+
+            .table td {
+                color: #025db2;
+            }
+
+            .table th {
+                color: #023767;
+            }
+
+            .table {
+                width: 150%;
+                float: right;
+                clear: left;
+                margin-left: 15px;
+            }
+
+            .rectangle2 {
+                width: 25%;
+                float: inline-start;
+                padding: 13px;
+                margin-bottom: 15px;
+                margin-right: 15px;
+                margin-top: 15px;
+                border-radius: 5px;
+                background-color: lightgray;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+            }
+
+            .form {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+    }
+    <br />
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PrivateIDNo)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DateRecieved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTransfered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedExpert)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovalStatus)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivateIDNo)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.DateRecieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTransfered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedExpert)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ApprovalStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success btn-sm" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) |
+        </td>
+    </tr>
+        }
+
+    </table>
+    <style>
+        .table-hover tr:hover {
+            background-color: #eee;
+            animation: highlight 0.2s ease-in-out;
+        }
+
+        .table td {
+            color: #025db2;
+        }
+
+        .table th {
+            color: #023767;
+        }
+    </style>

@@ -1,0 +1,117 @@
+﻿@model CSFUF.OverAllView.OverAllReports
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Status Tracking </h2>
+<br />
+
+@using (Html.BeginForm("Index", "OverAllReport", FormMethod.Get))
+{
+    <h5>በግል መ.ቁ. ይፈልጉ</h5>
+    @Html.TextBox("searchId")
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <br />
+}
+
+<table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayName("Customer's Full Name")
+        </th>
+        <th>
+            @Html.DisplayName("Date Recieved")
+        </th>
+        <th>
+            @Html.DisplayName("Pensioner's Id")
+        </th>
+        @foreach (var item in Model.Registration)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRecieved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrivateIDNo)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+
+            </td>
+            </tr>
+            }
+</table>
+@*<table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayName("Customer's Full Name")
+        </th>
+        <th>
+            @Html.DisplayName("Date Recieved")
+        </th>
+        <th>
+            @Html.DisplayName("Pensioner's Id")
+        </th>
+        @foreach (var item in Model.Decision)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRecieved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArchiveNo)
+            </td>
+        </tr>
+        }
+    </table>*@
+
+
+
+        @*<h2>Registration</h2>
+        <div>
+            @{WebGrid list = new WebGrid(source: Model.Registration, canPage: true, rowsPerPage: 10);}
+            @list.GetHtml();
+        </div>
+        <br />
+        <br />
+
+        <h2>Contribution</h2>
+        <div>
+            @{WebGrid lists = new WebGrid(source: Model.Contribution, canPage: true, rowsPerPage: 10);}
+            @lists.GetHtml();
+        </div>
+        <br />
+        <br />
+
+        <h2>Decision</h2>
+        <div>
+            @{WebGrid lis = new WebGrid(source: Model.Decision, canPage: true, rowsPerPage: 10);}
+            @lis.GetHtml();
+        </div>
+        <br />
+        <br />
+
+        <h2>Decision Experts task lists</h2>
+        <div>
+            @{WebGrid lits = new WebGrid(source: Model.DecisionTasks, canPage: true, rowsPerPage: 10);}
+            @lits.GetHtml();
+        </div>
+        <br />
+        <br />
+
+        <h2>Payment Experts task lists</h2>
+        <div>
+            @{WebGrid litss = new WebGrid(source: Model.Payment, canPage: true, rowsPerPage: 10);}
+            @lits.GetHtml();
+        </div>
+        <br />
+        <br />*@
